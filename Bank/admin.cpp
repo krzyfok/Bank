@@ -1,4 +1,5 @@
 #include <iostream>
+#include<conio.h>
 #include"admin.h"
 using namespace std;
 
@@ -20,14 +21,10 @@ int admin::logowanie()
 	{
 
 		system("cls");
-		cout << "ZALOGOWANO POMYSLNIE";
+		cout << "ZALOGOWANO POMYSLNIE, NACISNIJ DOWOLNY PRZYCSK BY KONTYNUOWAC" << endl;
 		return 1;
 
 	}
 	else return 0;
 }
 
-void admin_panel()
-{
-
-}
