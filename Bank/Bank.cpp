@@ -20,19 +20,21 @@ int main()
 	char x;
 	while (true)
 	{
-		cout << "Zaloguj sie jako:" << endl;
-		cout << "1.Klient" << endl;
-		cout << "2.Administrator" << endl;
+		cout << "ZALOGUJ SIE JAKO:" << endl;
+		cout << "    1.KLIENT" << endl;
+		cout << "2.ADMINISTRATOR" << endl;
 		
 		x = _getch();
 		switch (x)
 		{
 		case '1':
 			system("cls");
-			cout << "1.Zaloguj" << endl;
-			cout << "2.Utworz konto" << endl;
+			
 			while (true)
 			{
+				cout << " 1.ZALOGUJ" << endl;
+				cout << "2.NOWE KONTO" << endl;
+				cout << "  3.COFNIJ" << endl;
 				x = _getch();
 				switch (x)
 				{
@@ -77,28 +79,28 @@ int main()
 							break;
 						}
 					}
-					
-					
 					break;
 				case '2':
 					
 					system("cls");
 					stworz_klase(id);
 					id++;
+					system("cls");
+					goto menu;
 					
-					
-					
+				case '3':
+					system("cls");
+					goto menu;
+				break;
 					break;
 				default:
-					
+					system("cls");
+					cout << "BRAK OPCJI";
 					break;
-
-				}
-				break;
+				}				
 				cout << endl;
 			}
-			break;
-			
+			break;	
 		
 		case '2':
 			system("cls");
@@ -113,7 +115,7 @@ int main()
 				char x;
 				x = _getch();
 				system("cls");
-				cout << "PANEL ADMINISTRATORA" << endl;
+				cout << " PANEL ADMINISTRATORA" << endl;
 				cout << "   1.USUN KONTO " << endl;
 				cout << " 2.ZMIEN DANE KONTA " << endl;
 				cout << "  3.WYSWIETL KONTA" << endl;
@@ -127,6 +129,7 @@ int main()
 				case '2':
 					break;
 				case '3':
+					_wyswietlanie(id);
 					break;
 				case'4':
 					system("cls");
@@ -140,7 +143,7 @@ int main()
 			}
 			break;
 		default:
-			cout << "brak opcji";
+			
 			break;
 		}
 		system("cls");

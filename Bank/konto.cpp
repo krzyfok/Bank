@@ -1,6 +1,8 @@
 #include <iostream>
 
 #include"konto.h"
+#include"admin.h"
+
 
 
 using namespace std;
@@ -14,13 +16,7 @@ void konto::stworz(string _imie, string _nazwisko,string _login, string _haslo, 
 	stan = _stan;
 	id = _id;
 }
-konto::konto()
-{
-	imie = " ";
-	nazwisko = " ";
-	stan = 0;
-	id = 0;
-}
+
 
 void stworz_klase(int nr)
 {
@@ -117,5 +113,22 @@ void konto::wyplata()
 		{
 			stan = stan - kwota;
 		}
+	}
+}
+
+void konto::wyswietlanie()
+{
+	printf("|%3d |%10s|%10s|%15.2f|\n", id, nazwisko.c_str(), imie.c_str(), stan);
+	printf("--------------------------------------------\n");
+	
+}
+void _wyswietlanie(int k)
+{
+	printf("--------------------------------------------\n");
+	printf("| ID | NAZWISKO |   IMIE   |  STAN  KONTA  |\n");
+	printf("--------------------------------------------\n");
+	for (int i = 0;i < k;i++)
+	{
+		uzytkownik[i].wyswietlanie();
 	}
 }

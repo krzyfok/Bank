@@ -1,7 +1,13 @@
 #include <iostream>
 #include<conio.h>
 #include"admin.h"
+#include"konto.h"
+
+
+
 using namespace std;
+
+
 
 admin::admin()
 {
