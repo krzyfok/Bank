@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
 	admin admin;
-	
+
 	int id = 0;
 	int klient=0;
 	
@@ -61,7 +61,7 @@ int main()
 						switch (x)
 						{
 						case '1':
-							_wplata(klient);
+							_wplata(klient);							
 							break;
 						case '2':
 							_wyplata(klient);
@@ -124,9 +124,11 @@ int main()
 				switch (x)
 				{
 				case '1':
-
+					usun_konto(id);
+					id--;
 					break;
 				case '2':
+					_zmien_dane();
 					break;
 				case '3':
 					_wyswietlanie(id);

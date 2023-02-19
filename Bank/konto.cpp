@@ -132,3 +132,43 @@ void _wyswietlanie(int k)
 		uzytkownik[i].wyswietlanie();
 	}
 }
+
+void _zmien_dane()
+{
+	int id;
+	cout << "PODAJ ID KONTA KTOREGO DANE CHCESZ ZMIENIC: ";
+	cin >> id;
+	uzytkownik[id-1].zmien_dane();
+
+}
+
+void konto::zmien_dane()
+{
+	string nimie, nnazwisko;
+	cout << "PODAJ NOWE IMIE I NAZWISKO" << endl << "IMIE: ";
+	cin >> nimie;
+	cout << "NAZWISKO: ";
+	cin >> nnazwisko;
+	imie = nimie;
+	nazwisko = nnazwisko;
+}
+
+void usun_konto(int liczba)
+{
+	int id;
+	cout << "PODAJ ID KONTA KTORE CHCESZ USUNAC: ";
+	cin >> id;
+	if (id-1 >= liczba)
+	{
+		cout << "BRAK KONTA O PODANYM ID";
+	}
+	else
+	{
+		for (;id <= liczba;id++)
+		{
+			uzytkownik[id-1] = uzytkownik[id];
+			uzytkownik[id - 1].id -= 1;
+			
+		}
+	}
+}

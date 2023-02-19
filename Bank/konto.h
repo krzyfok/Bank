@@ -5,7 +5,7 @@ using namespace std;
 
 class konto
 {
-	friend class admin;
+	friend void usun_konto(int liczba);
 private:
 	string imie;
 	string nazwisko;
@@ -21,7 +21,7 @@ public:
 	void wyplata();
 	void stan_konta();
 	void wyswietlanie();
-
+	void zmien_dane();
 	
 	
 };
@@ -36,3 +36,6 @@ void _stan_konta(int k);
 
 void _wyplata(int k);
 void _wyswietlanie(int k);
+void _zmien_dane();
+
+void usun_konto(int liczba);

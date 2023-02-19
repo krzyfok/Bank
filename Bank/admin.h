@@ -10,7 +10,7 @@ private:
 public:
 	admin();
 	int logowanie();
-	;
+	
 
 
 };
