@@ -1,10 +1,6 @@
-﻿  Bank.cpp
-<<<<<<< HEAD
-=======
-  admin.cpp
+﻿  admin.cpp
+  Bank.cpp
   konto.cpp
   Generowanie kodu...
 C:\Users\krzys\OneDrive\Desktop\projekty\Bank\Bank\Bank\konto.cpp(71): warning C4715: "znajdz_konto”: niewszystkie ścieżki kodu zwracają wartość
-  LINK : nie znaleziono elementu C:\Users\krzys\OneDrive\Desktop\projekty\Bank\Bank\x64\Debug\Bank.exe ani nie został on skompilowany podczas ostatniego konsolidowania przyrostowego; zostanie wykonana pełna konsolidacja
->>>>>>> 2cd52c24a13e0cdfe24483ed335d80c22165c3f8
   Bank.vcxproj -> C:\Users\krzys\OneDrive\Desktop\projekty\Bank\Bank\x64\Debug\Bank.exe
