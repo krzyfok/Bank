@@ -5,7 +5,7 @@ using namespace std;
 
 class konto
 {
-	friend class admin;
+	
 private:
 	string imie;
 	string nazwisko;
