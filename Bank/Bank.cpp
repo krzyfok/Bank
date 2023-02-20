@@ -45,7 +45,21 @@ int main()
 					while (znajdz_konto(klient, uzytkownik) != 1)
 					{
 						system("cls");
-						cout << "BLAD LOGOWANIA, SPROBUJ PONOWNIE " << endl;
+						cout << "PODANY UZYTKOWNIK NIE ISTNIEJE" << endl;
+						cout << "NACISNIJ ENTER BY SPROBOWAC PONOWNIE" << endl;
+						x = _getch();
+						switch (x)
+						{
+						case (char)13:
+							
+							
+							break;
+						default:
+							system("cls");
+							goto menu;
+							break;
+						}
+
 						
 					}
 					while (true)
@@ -102,16 +116,27 @@ int main()
 				}				
 				cout << endl;
 			}
-			break;	
-		
+			break;		
 		case '2':
 			system("cls");
 			while (admin.logowanie() != 1)
 			{
 				system("cls");
 				cout << "BLAD LOGOWANIA, SPROBUJ PONOWNIE "<<endl;
+				cout << "NACISNIJ ENTER BY SPROBOWAC PONOWNIE" << endl;
+				x = _getch();
+				switch (x)
+				{
+				case (char)13:
+
+
+					break;
+				default:
+					system("cls");
+					goto menu;
+					break;
+				}
 			}
-			
 			while (true)
 			{
 				char x;
@@ -155,9 +180,6 @@ int main()
 			break;
 		}
 		system("cls");
-;		
-
-
 	}
 	
 }
