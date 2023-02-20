@@ -121,7 +121,8 @@ int main()
 				cout << "   1.USUN KONTO " << endl;
 				cout << " 2.ZMIEN DANE KONTA " << endl;
 				cout << "  3.WYSWIETL KONTA" << endl;
-				cout << "      4.WYLOGUJ" << endl;
+				cout << "4.ZAPISZ DANE DO PLIKU" << endl;
+				cout << "      5.WYLOGUJ" << endl;
 				
 				switch (x)
 				{
@@ -135,7 +136,10 @@ int main()
 				case '3':
 					_wyswietlanie(id, uzytkownik);
 					break;
-				case'4':
+				case '4':
+					zapis(id, uzytkownik);
+					break;
+				case'5':
 					system("cls");
 					goto menu;
 					

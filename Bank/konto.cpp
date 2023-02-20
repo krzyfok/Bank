@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <fstream>
 #include"konto.h"
 #include"admin.h"
 
@@ -162,4 +162,15 @@ void usun_konto(int liczba, konto obj[100])
 			
 		}
 	}
+}
+void zapis(int k, konto obj[100])
+{
+	ofstream myfile;
+	myfile.open("KONTA_DANE.txt");
+	for (int i = 0;i < k;i++)
+	{
+		myfile << obj[i].id << " " << obj[i].nazwisko << " " << obj[i].imie << " " << obj[i].stan << "\n";
+	}
+	myfile.close();
+
 }

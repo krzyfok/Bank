@@ -7,7 +7,7 @@ class konto
 {
 
 	friend void usun_konto(int liczba, konto obj[100]);
-
+	friend void zapis(int k, konto obj[100]);
 private:
 	string imie;
 	string nazwisko;
@@ -33,7 +33,7 @@ void stworz_klase(int numer, konto obj[100]);
 int znajdz_konto(int &klient, konto obj[100]);
 
 
-
+void zapis(int k, konto obj[100]);
 
 
 void _wyswietlanie(int k , konto obj[100]);
