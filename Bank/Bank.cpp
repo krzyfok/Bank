@@ -11,6 +11,7 @@ using namespace std;
 int main()
 {
 	admin admin;
+	konto uzytkownik[100];
 
 	int id = 0;
 	int klient=0;
@@ -41,7 +42,7 @@ int main()
 				case '1':
 					system("cls");
 					
-					while (znajdz_konto(klient) != 1)
+					while (znajdz_konto(klient, uzytkownik) != 1)
 					{
 						system("cls");
 						cout << "BLAD LOGOWANIA, SPROBUJ PONOWNIE " << endl;
@@ -61,13 +62,14 @@ int main()
 						switch (x)
 						{
 						case '1':
-							_wplata(klient);							
+							uzytkownik[klient].wplata();
+														
 							break;
 						case '2':
-							_wyplata(klient);
+							uzytkownik[klient].wyplata();
 							break;
 						case '3':
-							_stan_konta(klient);
+							uzytkownik[klient].stan_konta();
 							break;
 						case'4':
 							system("cls");
@@ -83,7 +85,7 @@ int main()
 				case '2':
 					
 					system("cls");
-					stworz_klase(id);
+					stworz_klase(id, uzytkownik);
 					id++;
 					system("cls");
 					goto menu;
@@ -124,14 +126,14 @@ int main()
 				switch (x)
 				{
 				case '1':
-					usun_konto(id);
+					usun_konto(id, uzytkownik);
 					id--;
 					break;
 				case '2':
-					_zmien_dane();
+					_zmien_dane(uzytkownik);
 					break;
 				case '3':
-					_wyswietlanie(id);
+					_wyswietlanie(id, uzytkownik);
 					break;
 				case'4':
 					system("cls");

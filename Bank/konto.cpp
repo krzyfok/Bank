@@ -6,7 +6,7 @@
 
 
 using namespace std;
-konto uzytkownik[100];
+
 void konto::stworz(string _imie, string _nazwisko,string _login, string _haslo, long double _stan, int _id)
 {
 	imie = _imie;
@@ -18,7 +18,7 @@ void konto::stworz(string _imie, string _nazwisko,string _login, string _haslo, 
 }
 
 
-void stworz_klase(int nr)
+void stworz_klase(int nr, konto obj[100])
 {
 	string imie, nazwisko, login , haslo;
 	long double stan;
@@ -33,7 +33,7 @@ void stworz_klase(int nr)
 	cin >> haslo;
 	cout << "STAN KONTA: ";
 	cin >> stan;
-	(uzytkownik[nr]).stworz(imie, nazwisko,login,haslo, stan, id);
+	obj[nr].stworz(imie, nazwisko, login, haslo, stan, id);
 	
 	
 }
@@ -52,7 +52,7 @@ int konto::logowanie()
 }
 
 
-int znajdz_konto(int &klient)
+int znajdz_konto(int &klient, konto obj[100])
 {
 	string login;
 	cout << "LOGIN: ";
@@ -60,19 +60,16 @@ int znajdz_konto(int &klient)
 	
 	for (int k = 0;k < 100;k++)
 	{
-		if (login == uzytkownik[k].login)
+		if (login == obj[k].login)
 		{
 			klient = k;
-			return uzytkownik[k].logowanie();
+			return obj[k].logowanie();
 			
 		}
 	}
 	
 }
-void _wplata(int k)
-{
-	uzytkownik[k].wplata();
-}
+
 void konto:: wplata()
 {
 	int kwota;
@@ -82,18 +79,12 @@ void konto:: wplata()
 	
 }
 
-void _stan_konta(int k)
-{
-	uzytkownik[k].stan_konta();
-}
+
 void konto:: stan_konta()
 {
 	cout <<"STAN KONTA: "<< stan;
 }
-void _wyplata(int k)
-{
-	uzytkownik[k].wyplata();
-}
+
 void konto::wyplata()
 {
 	int kwota;
@@ -122,23 +113,23 @@ void konto::wyswietlanie()
 	printf("--------------------------------------------\n");
 	
 }
-void _wyswietlanie(int k)
+void _wyswietlanie(int k, konto obj[100])
 {
 	printf("--------------------------------------------\n");
 	printf("| ID | NAZWISKO |   IMIE   |  STAN  KONTA  |\n");
 	printf("--------------------------------------------\n");
 	for (int i = 0;i < k;i++)
 	{
-		uzytkownik[i].wyswietlanie();
+		obj[i].wyswietlanie();
 	}
 }
 
-void _zmien_dane()
+void _zmien_dane(konto obj[100])
 {
 	int id;
 	cout << "PODAJ ID KONTA KTOREGO DANE CHCESZ ZMIENIC: ";
 	cin >> id;
-	uzytkownik[id-1].zmien_dane();
+	obj[id-1].zmien_dane();
 
 }
 
@@ -153,7 +144,7 @@ void konto::zmien_dane()
 	nazwisko = nnazwisko;
 }
 
-void usun_konto(int liczba)
+void usun_konto(int liczba, konto obj[100])
 {
 	int id;
 	cout << "PODAJ ID KONTA KTORE CHCESZ USUNAC: ";
@@ -166,8 +157,8 @@ void usun_konto(int liczba)
 	{
 		for (;id <= liczba;id++)
 		{
-			uzytkownik[id-1] = uzytkownik[id];
-			uzytkownik[id - 1].id -= 1;
+			obj[id-1] = obj[id];
+			obj[id - 1].id -= 1;
 			
 		}
 	}

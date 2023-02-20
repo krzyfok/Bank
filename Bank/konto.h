@@ -6,7 +6,7 @@ using namespace std;
 class konto
 {
 
-	friend void usun_konto(int liczba);
+	friend void usun_konto(int liczba, konto obj[100]);
 
 private:
 	string imie;
@@ -28,16 +28,15 @@ public:
 	
 };
 
-void stworz_klase(int numer);
+void stworz_klase(int numer, konto obj[100]);
 
-int znajdz_konto(int &klient);
+int znajdz_konto(int &klient, konto obj[100]);
 
-void _wplata(int k);
 
-void _stan_konta(int k);
 
-void _wyplata(int k);
-void _wyswietlanie(int k);
-void _zmien_dane();
 
-void usun_konto(int liczba);
+
+void _wyswietlanie(int k , konto obj[100]);
+void _zmien_dane(konto obj[100]);
+
+void usun_konto(int liczba, konto obj[100]);
