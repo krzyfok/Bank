@@ -109,15 +109,15 @@ void konto::wyplata()
 
 void konto::wyswietlanie()
 {
-	printf("|%3d |%10s|%10s|%15.2f|\n", id, nazwisko.c_str(), imie.c_str(), stan);
-	printf("--------------------------------------------\n");
+	printf("|%3d |%10s|%10s|%10s|%10s|%15.2f|\n", id, nazwisko.c_str(), imie.c_str(),login.c_str(),haslo.c_str(), stan);
+	printf("------------------------------------------------------------------\n");
 	
 }
 void _wyswietlanie(int k, konto obj[100])
 {
-	printf("--------------------------------------------\n");
-	printf("| ID | NAZWISKO |   IMIE   |  STAN  KONTA  |\n");
-	printf("--------------------------------------------\n");
+	printf("------------------------------------------------------------------\n");
+	printf("| ID | NAZWISKO |   IMIE   |  LOGIN   |   HASLO  |  STAN  KONTA  |\n");
+	printf("------------------------------------------------------------------\n");
 	for (int i = 0;i < k;i++)
 	{
 		obj[i].wyswietlanie();
@@ -169,8 +169,16 @@ void zapis(int k, konto obj[100])
 	myfile.open("KONTA_DANE.txt");
 	for (int i = 0;i < k;i++)
 	{
-		myfile << obj[i].id << " " << obj[i].nazwisko << " " << obj[i].imie << " " << obj[i].stan << "\n";
+		myfile << obj[i].id << " " << obj[i].nazwisko << " " << obj[i].imie << " " <<obj[i].login<<" "<<obj[i].haslo<<" " << obj[i].stan << "\n";
 	}
 	myfile.close();
 
+}
+
+void konto::zmien_haslo()
+{
+	string nhaslo;
+	cout << "PODAJ NOWE HASLO: ";
+	cin >> nhaslo;
+	haslo = nhaslo;
 }

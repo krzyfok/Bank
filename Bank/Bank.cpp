@@ -70,8 +70,9 @@ int main()
 						cout << "PANEL KLIENTA" << endl;
 						cout << "  1.WPLATA" << endl;
 						cout << "  2.WYPLATA " << endl;
-						cout <<  "3.STAN KONTA" << endl;
-						cout << "  4.WYLOGUJ" << endl;
+						cout << " 3.STAN KONTA" << endl;
+						cout << "4.ZMIEN HASLO" << endl;
+						cout << "  5.WYLOGUJ" << endl;
 						
 						switch (x)
 						{
@@ -85,7 +86,10 @@ int main()
 						case '3':
 							uzytkownik[klient].stan_konta();
 							break;
-						case'4':
+						case '4':
+							uzytkownik[klient].zmien_haslo();
+							break;
+						case'5':
 							system("cls");
 							goto menu;
 

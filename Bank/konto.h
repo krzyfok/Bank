@@ -24,6 +24,7 @@ public:
 	void stan_konta();
 	void wyswietlanie();
 	void zmien_dane();
+	void zmien_haslo();
 	
 	
 };
